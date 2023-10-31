@@ -45,3 +45,4 @@ mount -a
 
 # Inform the user about the successful setup
 echo "SSD storage device is now formatted with ext4, added to /etc/fstab, and mounted at /mnt."
+#
