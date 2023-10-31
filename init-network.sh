@@ -1,5 +1,6 @@
 #!/bin/sh
 # address 192.168.1.1/24 should be rechecked
+# /proc/sys/net/ipv4/conf/<eno1>/proxy_arp - should be changed <eno1> on actual
 echo "adding vmbr0 config"
 sleep 5
 cat >> /etc/network/interfaces << EOL
