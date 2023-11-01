@@ -28,7 +28,24 @@ w
 EOF
 
 echo "# Format the partition as ext4" && sleep 5
-mkfs.ext4 ${ssd_device}1
+mkfs.ext4 ${ssd_device} <<EOF
+y
+EOF
+
+# reuse this code after comment
+<<comments
+echo "# Format the partition as ext4" && sleep 5
+mkfs.ext4 /dev/nvme1n1 <<EOF
+y
+EOF
+
+blkid -o value -s UUID /dev/nvme1n1
+
+cp /etc/fstab /root/fstab.bk
+echo "# /dev/nvme1n1" >> /etc/fstab && echo "UUID=bf61cad5-186e-45c6-8193-2a061ef6323b /mnt/ssd02 ext4 defaults 0 0" >> /etc/fstab && cat /etc/fstab
+mount -a && lsblk
+comments
+
 
 read -p "# Enter the mount point ssd02 for device (like /mnt/ssd02): " mount_point
 
@@ -41,7 +58,7 @@ mount ${ssd_device}1 $mount_point
 lsblk
 
 echo "# Generate a UUID for the partition" && sleep 5
-uuid=$(blkid -o value -s UUID ${ssd_device}1)
+uuid=$(blkid -o value -s UUID ${ssd_device})
 
 echo "# Add an entry to /etc/fstab" && sleep 5
 echo "UUID=$uuid $mount_point ext4 defaults 0 0" >> /etc/fstab
