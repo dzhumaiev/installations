@@ -43,7 +43,7 @@ blkid -o value -s UUID /dev/nvme1n1
 
 cp /etc/fstab /root/fstab.bk
 echo "# /dev/nvme1n1" >> /etc/fstab && echo "UUID=bf61cad5-186e-45c6-8193-2a061ef6323b /mnt/ssd02 ext4 defaults 0 0" >> /etc/fstab && cat /etc/fstab
-mount -a && lsblk
+mount -a && systemctl daemon-reload && lsblk
 comments
 
 
