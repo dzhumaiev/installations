@@ -74,7 +74,7 @@ pvesm add dir SSD02 --path $mount_point
 pvesm status
 
 echo "# Add NAS for backups" && sleep 5
-pvesm add cifs u254606-sub8 --server u254606.your-storagebox.de --share u254606-sub8 --prune-backups keep-last=2 --content backup --username <username> --password <password>
+pvesm add cifs <NAS-account-name> --server <NAS-URL> --share <NAS-account-name> --prune-backups keep-last=2 --content backup --username <username> --password <password>
 pvesm status
 
 exit
