@@ -11,6 +11,7 @@ echo "iptables-restore < /etc/iptables_rules" >> /etc/network/if-pre-up.d/iptabl
 echo "exit" >> /etc/network/if-pre-up.d/iptables
 chmod +x /etc/network/if-pre-up.d/iptables
 ls -lah /etc/network/if-pre-up.d
+cat /etc/network/if-pre-up.d/iptables
 
 set +x 
 

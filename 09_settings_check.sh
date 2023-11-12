@@ -27,7 +27,7 @@ cat /proc/sys/net/ipv4/conf/$nic_name/proxy_arp
 
 ls -lah /etc | grep iptables
 ls -lah /etc/network/if-pre-up.d
-
+cat /etc/network/if-pre-up.d/iptables
 
 set +x
 
