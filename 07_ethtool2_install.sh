@@ -11,8 +11,8 @@ apt install ethtool
 echo "Pick up one of the NIC"
 ifconfig -a | grep -o '^[a-zA-Z0-9]*'
 
-read -p "Enter NIC name to turn off rx and tx" nic_name
-echo "You enteres $nic_name"
+read -p "Enter NIC name to turn off rx and tx: " nic_name
+echo "You entered $nic_name"
 sleep 5
 echo "set rx and tx checksumming OFF, so the NIC name is first in the list"
 sleep 15

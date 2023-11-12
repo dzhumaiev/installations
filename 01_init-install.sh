@@ -14,6 +14,8 @@ apt update && apt full-upgrade -y
 # add comments and sleep
 apt install pve-kernel-6.2 -y
 # add comments and sleep and input claryfication for reboot
+echo "Going to reboot host in 20 sec"
+sleep 20
 systemctl reboot
 
 set +x
