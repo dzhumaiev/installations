@@ -18,8 +18,12 @@ apt remove os-prober -y
 echo "install ifupdown2" && sleep 5
 apt-get install ifupdown2 -y
 
-echo "Move or Backup Enterprise subscription to avoid update free updates" && sleep 5
+echo "list of /etc/apt/sources.list.d"
+ls -lah /etc/apt/sources.list.d && sleep 5
+echo "Backup or move pve-enterprise.list to avoid NON enterprise update failes"
 mv /etc/apt/sources.list.d/pve-enterprise.list /root/pve-enterprise.list_bk
+ls -lah /etc/apt/sources.list.d
+ls -lah /root
 
 echo "!!! reboot in 15 sec !!!" && sleep 15
 systemctl reboot
