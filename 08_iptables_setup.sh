@@ -15,4 +15,6 @@ cat /etc/network/if-pre-up.d/iptables
 
 set +x 
 
+#TODO create a iptable pattern to use for very first iptables settings
+
 exit
