@@ -1,5 +1,9 @@
 #!/bin/sh
 #
+set -x
+
+echo "Fail2ban Proxmox installation script turned in to the 'Prints a trace of commands' mode" && sleep 5
+
 echo "!!! install fail2ban" && sleep 5
 apt install fail2ban -y
 #
@@ -35,5 +39,7 @@ echo "check fail2ban configs and activities" && sleep 5
 fail2ban-client status
 fail2ban-client status sshd
 tail -F /var/log/fail2ban.log
+
+set +x
 
 exit

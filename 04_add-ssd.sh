@@ -2,6 +2,10 @@
 
 # !!! did not test !!! it need to troubleshoot
 
+set -x
+
+echo "Second SSD adding script turned in to the 'Prints a trace of commands' mode" && sleep 5
+
 echo "# Check if the script is run as root (or with sudo)" && sleep 5
 if [ "$EUID" -ne 0 ]; then
   echo "# Please run this script as root or using sudo."
@@ -72,6 +76,8 @@ lsblk
 echo "# Add storage to proxmox" && sleep 5
 pvesm add dir SSD02 --path $mount_point
 pvesm status
+
+set +x
 
 exit
 

@@ -1,4 +1,8 @@
 #!/bin/sh
+set -x
+
+echo "Innitial installation script turned in to the 'Prints a trace of commands' mode" && sleep 5
+
 # add comments and sleep
 echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bookworm pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
 # add comments and sleep
@@ -11,3 +15,7 @@ apt update && apt full-upgrade -y
 apt install pve-kernel-6.2 -y
 # add comments and sleep and input claryfication for reboot
 systemctl reboot
+
+set +x
+
+exit
