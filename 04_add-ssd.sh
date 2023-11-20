@@ -73,11 +73,11 @@ mount -a
 echo "# SSD storage device $ssd_device is now formatted with ext4, added to /etc/fstab, and mounted at $mount_point" && sleep 5
 lsblk
 
+read -p "# Enter the storage name to proxmox (like SSD02 if the /mnt/ssd02): " storage_name
+
 echo "# Add storage to proxmox" && sleep 5
-pvesm add dir SSD02 --path $mount_point
-pvesm status
+pvesm add dir $storage_name --path $mount_point
 
 set +x
 
 exit
-
