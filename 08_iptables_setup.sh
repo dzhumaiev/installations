@@ -6,12 +6,12 @@ echo "iptables Settings script turned in to the 'Prints a trace of commands' mod
 iptables-save > /etc/iptables_rules
 chmod +x /etc/iptables_rules
 
-echo "#!/bin/sh" > /etc/network/if-pre-up.d/iptables
-echo "iptables-restore < /etc/iptables_rules" >> /etc/network/if-pre-up.d/iptables
-echo "exit" >> /etc/network/if-pre-up.d/iptables
-chmod +x /etc/network/if-pre-up.d/iptables
-ls -lah /etc/network/if-pre-up.d
-cat /etc/network/if-pre-up.d/iptables
+echo "#!/bin/sh" > /etc/network/if-up.d/iptables
+echo "iptables-restore < /etc/iptables_rules" >> /etc/network/if-up.d/iptables
+echo "exit" >> /etc/network/if-up.d/iptables
+chmod +x /etc/network/if-up.d/iptables
+ls -lah /etc/network/if-up.d
+cat /etc/network/if-up.d/iptables
 
 set +x 
 
