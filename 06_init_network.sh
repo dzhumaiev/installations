@@ -5,7 +5,7 @@ echo "Network innitial setip script turned in to the 'Prints a trace of commands
 
 echo "adding vmbr0 config"
 sleep 5
-read -p "# Enter network GW (like 192.168.1.1): " ip_gw
+read -p "# Enter network GW (like 192.168.1.1), if migration then see IP on the source host: " ip_gw
 
 # add configs to the >> /etc/network/interfaces
 echo "" >> /etc/network/interfaces
