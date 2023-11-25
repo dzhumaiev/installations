@@ -78,6 +78,8 @@ read -p "# Enter the storage name to proxmox (like SSD02 if the /mnt/ssd02): " s
 echo "# Add storage to proxmox" && sleep 5
 pvesm add dir $storage_name --path $mount_point
 
+echo "# Check mounted storages to proxmox status" && sleep 5
+pvesm status
 set +x
 
 exit
