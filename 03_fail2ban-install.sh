@@ -17,7 +17,7 @@ enabled = true
 port = ssh
 backend = systemd
 logpath = %(sshd_log)s
-maxretry = 3
+maxretry = 2
 bantime = 86400
 EOL
 #
