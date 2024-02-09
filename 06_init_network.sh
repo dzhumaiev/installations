@@ -14,7 +14,7 @@ echo "        iface vmbr0 inet static" >> /etc/network/interfaces
 echo "        address $ip_gw/24" >> /etc/network/interfaces
 echo "        bridge-ports none" >> /etc/network/interfaces
 echo "        bridge-stp off" >> /etc/network/interfaces
-echo "        bridge-fd 0:" >> /etc/network/interfaces
+echo "        bridge-fd 0" >> /etc/network/interfaces
 echo "" >> /etc/network/interfaces
 echo "        post-up echo 1 > /proc/sys/net/ipv4/ip_forward" >> /etc/network/interfaces
 echo "use one of these interface name for proxy_arp"
