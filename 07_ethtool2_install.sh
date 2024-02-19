@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -x
 
@@ -24,7 +24,7 @@ ethtool -k $nic_name | grep -E -- 'rx-checksumming|tx-checksumming'
 
 echo "create and add ethtool2 config for if-up.d"
 sleep 5
-echo "#!/bin/sh" > /etc/network/if-up.d/ethtool2
+echo "#!/bin/bash" > /etc/network/if-up.d/ethtool2
 echo "ethtool -K $nic_name tx off rx off" >> /etc/network/if-up.d/ethtool2 #TODO fix it
 echo "exit" >> /etc/network/if-up.d/ethtool2
 
