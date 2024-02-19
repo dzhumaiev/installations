@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -x
 
 echo "Settings check script turned in to the 'Prints a trace of commands' mode" && sleep 5
