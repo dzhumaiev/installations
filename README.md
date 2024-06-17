@@ -2,7 +2,7 @@
 proxmox host VM installations and configs
 
 # initially copy and past
-```
+```bash
 cd /root && \
 mkdir git_dzhumaiev && \
 cd git_dzhumaiev && \
