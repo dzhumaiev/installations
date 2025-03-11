@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 echo "!!! CHECK /etc/fail2ban/jail.local and /etc/fail2ban/filter.d/proxmox.conf BEFORE RUN THIS SCRIPT !!!"
 sleep 10
 
@@ -43,3 +45,7 @@ sleep 5
 fail2ban-client status proxmox
 
 echo "Fail2ban Proxmox configuration completed."
+
+set +x
+
+exit
